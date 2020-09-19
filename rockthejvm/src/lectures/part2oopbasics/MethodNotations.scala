@@ -4,22 +4,22 @@ import scala.language.postfixOps
 
 object MethodNotations extends App{
 
-  class Person (val name: String, favouriteMovie: String, val age: Int){
+  class Person (val name: String, favouriteMovie: String, val age: Int  = 0){
     def likes(movie: String): Boolean = movie == favouriteMovie
     def hangOutWith(person: Person): String = s"${this.name} is hanging out with ${person.name}"
     // + is a valid method name
     //def +(person: Person): String = s"${this.name} is hanging out with ${person.name}"
     def +(rockstar: String):  Person = new Person(name=this.name + " " + rockstar, favouriteMovie, age)
     def unary_! : String = s"$name, what the heck?"
-    def unary_+ : Person = new Person(name, favouriteMovie, age = this.age+1)
+    def unary_+ : Person = new Person(name, favouriteMovie, age + 1)
     def isAlive: Boolean = true
     def learns(subject: String): String = s"$name is learning $subject"
-    def learnsScala(): String = learns("Scala")
+    def learnsScala =  this learns "scala"
     def apply(): String = s"Hi, my name is $name and I like $favouriteMovie"
     def apply(num: Int): String = s"Mary has watched $favouriteMovie $num times"
   }
 
-  val mary = new Person("Mary", "Inception", 23)
+  val mary = new Person("Mary", "Inception")
   println(mary.likes("Inception"))
   println(mary likes "Inception") // both are equivalent
   //infix notation = operator notation single parameter
@@ -53,10 +53,12 @@ object MethodNotations extends App{
   // 1. overload the + operator
   // mary + "The Rockstar" = > new Person "Mary (the rockstar)"
   println((mary + "Bowie").name)
+  println((mary + "Bowie")())
   //2. Add an age to the person class
   // add a unary + operator => new Person with age +1
   println("Hi I'm " + mary.name + " and I'm " + mary.age)
-  println("Hi I'm " + (mary.unary_+ + "Lorde").name + " and I'm " + mary.unary_+.age)
+  println(+mary.age)
+  println(mary.unary_+.age)
   //3. Add  a "learns" method in the person class
   // String => Mary learns scala
   // Add a learnsscala method , calls learns method with "scala"

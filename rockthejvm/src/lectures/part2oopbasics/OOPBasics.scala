@@ -1,6 +1,6 @@
 package lectures.part2oopbasics
 
-object OOBasics extends App{
+object OOPBasics extends App{
   val person  = new Person("John", 26)
   println(person.age)
   person.greet("Daniel")

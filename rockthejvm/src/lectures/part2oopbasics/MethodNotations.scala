@@ -49,6 +49,7 @@ object MethodNotations extends App{
   println(mary.apply())
   println(mary()) // equivalent
   // compiler looks for an apply method in the class scope and calls that method
+  // call objects as functions
 
   // 1. overload the + operator
   // mary + "The Rockstar" = > new Person "Mary (the rockstar)"

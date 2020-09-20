@@ -1,5 +1,7 @@
 package exercises
 
+import sun.awt.geom.AreaOp.NZWindOp
+
 abstract class MyList() {
     // holds integers
   val integerList = List[Int]()
@@ -23,7 +25,7 @@ trait PrintList{
   def printTailToConsole: Unit
 }
 
-object Empty extends MyList{
+case object Empty extends MyList{
   def headList: Int = ???
 
   def add(num: Int): MyList = ???
@@ -37,7 +39,7 @@ object Empty extends MyList{
   def isListEmpty: Boolean = ???
 }
 
-class NewList(integerList: List[Int]) extends MyList with PrintList{
+case class NewList(override val integerList: List[Int]) extends MyList with PrintList{
 
   def isListEmpty: Boolean = if (integerList.isEmpty) true else false
 
@@ -56,17 +58,26 @@ class NewList(integerList: List[Int]) extends MyList with PrintList{
 }
 
 object Lists extends App{
+// NewList is a case class and doesn't need the "new" keyword to be initialised
+  val list1 = NewList(List[Int](1, 2, 3, 4, 5))
 
-  val list1 = new NewList(List[Int](1, 2, 3, 4, 5))
+  // now println(list1.toString) == println(list1)
+  println(list1)
   list1.printListToConsole
   println(s"The first member of my list is ${list1.headList}")
-  println(s"The other members od my list are ${list1.tailList}")
+  println(s"The other members of my list are ${list1.tailList}")
   list1.printStringToConsole
   list1.printHeadToConsole
   list1.printTailToConsole
 
   val list2 = list1.add(7)
-  list2.printListToConsole
+  println(list2)
+
+  val list3 = list1.copy(List[Int](4, 5, 6, 7, 8))
+  println(list3)
+  
 
 }
+
+//Expand MyList to use case classes and objects
 

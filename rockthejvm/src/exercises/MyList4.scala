@@ -1,7 +1,7 @@
 package exercises
 
 abstract class MyList4[+A] {
-
+  /*
   def headList: A
 
   def tailList: MyList4[A]
@@ -80,3 +80,7 @@ object Lists4 extends App{
 // [1, 2, 3].map(n*2) = [2, 4, 6]
 // [1, 2, 3, 4].filter(n%2) = [2,4]
 // [1, 2, 3].flatMap(n=> [n, n+1]) => [1, 2, 2, 3, 3, 4, 4]
+
+}
+ */
+}

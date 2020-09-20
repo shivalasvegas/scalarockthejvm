@@ -47,3 +47,15 @@ object Lists3 extends App{
 
 }
 
+//1. Create a generic trait - MyPredicate[T]
+// - test[T] => boolean
+//2. Create a generic trait - MyTransformer[A, B]
+//3. MyList:
+// - map(tranformer) => MyList
+// - filter(predicate) => MyList
+// - flatMap(transformer from A to MyList[B] => MyList[B]
+// class EventPredicate extends MyPredicate[Int]
+// class StringToIntTransformer extends MyTransformer[String, Int]
+// [1, 2, 3].map(n*2) = [2, 4, 6]
+// [1, 2, 3, 4].filter(n%2) = [2,4]
+// [1, 2, 3].flatMap(n=> [n, n+1]) => [1, 2, 2, 3, 3, 4, 4]

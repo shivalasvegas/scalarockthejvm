@@ -75,7 +75,7 @@ object Lists extends App{
 
   val list3 = list1.copy(List[Int](4, 5, 6, 7, 8))
   println(list3)
-  
+
 
 }
 

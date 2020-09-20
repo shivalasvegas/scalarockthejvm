@@ -16,7 +16,7 @@ object Objects extends App{
   class Person(val name: String){
     // Instance level functionality
   }
-  // Companions: reside in the same scope and same name
+  // Companions: reside in the same scope and have the same name
 
   println(Person.N_EYES)
   val mary = new Person("Mary")

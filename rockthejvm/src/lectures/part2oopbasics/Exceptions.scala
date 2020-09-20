@@ -39,6 +39,7 @@ object Exceptions extends App{
 
   /*
   crash programme with an out of memory error
+
   crash with a stack overflow error
   pocket calculator -
     add(x, y)
@@ -50,5 +51,11 @@ object Exceptions extends App{
     -UnderflowException if sub() exceeds Int_MIN_VLAUE
     -MathCalculatorException for divide by 0
    */
+  // OOM
+  //val array = Array.ofDim(Int.MaxValue)
+
+  // SO
+//  def infinite: Int = 1+infinite
+//  val noLimit = infinite
 
 }

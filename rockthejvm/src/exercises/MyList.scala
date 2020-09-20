@@ -16,14 +16,28 @@ abstract class MyList() {
   def listToString: String
 
 }
-trait printList{
+trait PrintList{
   def printListToConsole: Unit
   def printStringToConsole: Unit
   def printHeadToConsole: Unit
   def printTailToConsole: Unit
 }
 
-class NewList(override val integerList: List[Int]) extends MyList with printList{
+object Empty extends MyList{
+  def headList: Int = ???
+
+  def add(num: Int): MyList = ???
+
+  def listToString: String = ???
+
+  def tailList: List[Int] = ???
+
+  override val integerList = ???
+
+  def isListEmpty: Boolean = ???
+}
+
+class NewList(integerList: List[Int]) extends MyList with PrintList{
 
   def isListEmpty: Boolean = if (integerList.isEmpty) true else false
 

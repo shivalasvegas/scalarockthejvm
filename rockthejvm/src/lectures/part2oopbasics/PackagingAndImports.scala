@@ -2,7 +2,7 @@ package lectures.part2oopbasics
 
 import java.util.Date
 import java.util.{Date=>SqlDate}
-import playground.{PrinceCharming, Cinderella, Cinderella=>Princess}
+import playground.{PrinceCharming, Cinderella=>Princess}
 
 object PackagingAndImports extends App{
 

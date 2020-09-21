@@ -26,7 +26,6 @@ object ScalaMiNetwork extends App {
   scalaMi = friendMi("Frank", 0)
   println(scalaMi)
 
-
 }
 
 /*

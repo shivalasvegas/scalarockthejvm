@@ -48,8 +48,8 @@ object HOFsAndCurries extends App {
   //2. Method toCurry (f: (Int, Int) => Int) => (Int => Int => Int)
   def toCurry(f: (Int, Int) => Int): (Int => Int => Int) = (x: Int) => (y: Int) => f(x, y)
   def fromCurry(f: (Int => Int => Int)): (Int, Int) => Int = (x, y) => f(x)(y)
-  
 
+  // Generic version
   def composer[A, B, T](f: A => B, g: T => A): T => B = x => f(g(x))
   def compose(f: Int => Int, g: Int => Int): Int => Int = (x: Int) => f(g(x: Int))
   def andThen(f: Int => Int, g: Int => Int): Int => Int = (x: Int) => g(f(x: Int))

@@ -62,6 +62,6 @@ object HandlingFailure extends App{
 
     def getSafeConnection(host: String, port: String): Try[Connection] = Try(getConnection(host, port))
   }
-  val possibleConnection = HTTPService.getSafeConnection(host, port)
-  
+  //val possibleConnection = HTTPService.getSafeConnection(host, port)
+
 }

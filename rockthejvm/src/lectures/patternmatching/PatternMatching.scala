@@ -70,6 +70,6 @@ object PatternMatching extends App{
     case Product(x, y) => println(s"The sum of $x and $y = ${x*y}")
     case _ => "Opps!"
   }
-  
+
 
 }
